@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMBAIXADA</title>
+</head>
+
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    Qual seu pais? <input type="text" name="nac" class="nac">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div class="res">
+
+    </div>
+
+    <script>
+
+        function verificar() {
+            var txtv = window.document.querySelector('input.nac')
+            var res = window.document.querySelector('div.res')
+            var nac = Text(txtv.value)
+            res.innerHTML = `<p>Seu país atual é <strong>${nac}</strong></p>`
+            if (nac != 'Brasil') {
+                res.innerHTML += `Você é<strong>ESTRANGEIRO</strong>`
+            } else {
+                res.innerHTML += `Você é<strong>BRASILEIRO</strong>`
+            }
+        }
+    </script>
+</body>
+
+</html>
