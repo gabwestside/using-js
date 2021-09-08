@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <form action="#" method=”GET”>
+            <h1>Cadastro de Estágio do Aluno</h1>
+
+            Nome:<br /> <input type="text" name="nome"> <br />
+            Sobrenome:<br /> <input type="text" name="subname"> <br />
+            Matricula:<br /> <input type="text" name="mat"> <br />
+            Semestre:<br /> <input type="text" name="sem"> <br />
+            Curso:<br /> <input type="text" name="curso"> <br />
+            Intituição:<br /> <input type="text" name="college"> <br />
+
+            <p>Digite o seu Email principal e crie sua senha para a plataforma:</p>
+            Email:<br /> <input type="email" name="email"> <br />
+            Senha:<br /> <input type="password" name="Password"> <br /><br>
+
+            Vaga a concorrer:<br /> <select onchange="alertMensage()" name="vaga">
+                <option value="">--Selecione uma Opção--</option>
+                <option value="front">Front-end</option>
+                <option value="back">Back-end</option>
+                <option value="full">Fullstack Js</option>
+                <option value="Python">Python Web</option>
+                <option value="c#">C#</option>
+                <option value="Java">Java</option>
+            </select><br /><br />
+
+            Cargo a concorrer:<br /> <select multiple size=2 name="cargo">
+                <option value="jr">Junior</option>
+                <option value="pleno">Pleno</option>
+                <option value="senior">Senior</option>
+            </select><br /><br />
+
+            <p>Quais dessas linguagens e frameworks você domina?</p>
+            <input type="checkbox" name="name1"> HTML, CSS e JavaScript </input> <br />
+            <input type="checkbox" name=""> NodeJs </input> <br />
+            <input type="checkbox" name=""> React e React Native </input> <br />
+            <input type="checkbox" name=""> Angular </input> <br />
+            <input type="checkbox" name=""> VueJs </input> <br />
+
+
+
+            <p>Carta de apresentação:</p>
+            <textarea class="comentario" onclick="alertMessageTextarea()" maxlength="144" minlength="20" cols=40 rows=5
+                name='comentario'></textarea><br>
+
+            <button onclick="alertAjuda()">Ajuda</button>
+
+            <input type="submit" name="Enviar">
+        </form>
+    </div>
+</body>
+
+</html>
