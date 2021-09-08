@@ -5,39 +5,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Westside</title>
     <link rel="stylesheet" href="style.css">
+    <title>Calculadora</title>
 </head>
 
 <body>
-    <div class="main">
-        <form action="" name="calculadora">
-            <input type="text" class="txt maincolor" name="txt1" disabled>
-            <input type="text" class="txt1 maincolor" name="txt12" value="C" onclick="location.reload()"><br>
+    <div class="container">
+        <form method=”GET”>
+            <h1>Calculator</h1>
+            Primeiro Número:<br /> <input type="text" name="n1" id="n1"> <br /><br />
+            Segundo Número:<br /> <input type="text" name="n2" id="n2">
+            <br><br>
 
-            <input type="button" class="num maincolor" name="btn9" value="9" onclick="displaynum(btn9.value)">
-            <input type="button" class="num maincolor" name="btn8" value="8" onclick="displaynum(btn8.value)">
-            <input type="button" class="num maincolor" name="btn7" value="7" onclick="displaynum(btn7.value)">
-            <input type="button" class="num blue" name="addbtn" value="+" onclick="displaynum(addbtn.value)"><br>
+            <select name="operaoes" id="oper">
+                <option value="choice">--Operações--</option>
+                <option value="-">Somar</option>
+                <option value="*">Subtrair</option>
+                <option value="/">Multiplicar</option>
+                <option value="/">Dividir</option>
+            </select><br /><br />
 
-            <input type="button" class="num maincolor" name="btn" value="6" onclick="displaynum(btn6.value)">
-            <input type="button" class="num maincolor" name="btn" value="5" onclick="displaynum(btn5.value)">
-            <input type="button" class="num maincolor" name="btn" value="4" onclick="displaynum(btn4.value)">
-            <input type="button" class="num pin" name="subbtn" value="-" onclick="displaynum(subbtn.value)"><br>
+            <button onclick="somar()">+</button>
+            <button onclick="sub()">-</button>
+            <button onclick="mult()">*</button>
+            <button onclick="div()">/</button>
+            <br /> <br />
 
-            <input type="button" class="num maincolor" name="btn" value="3" onclick="displaynum(btn3.value)">
-            <input type="button" class="num maincolor" name="btn" value="2" onclick="displaynum(btn2.value)">
-            <input type="button" class="num maincolor" name="btn" value="1" onclick="displaynum(btn1.value)">
-            <input type="button" class="num gre" name="mulbtn" value="*" onclick="displaynum(mulbtn.value)"><br>
+            Resultado: <span></span> <br />
 
-            <input type="button" class="num maincolor" name="dot" value="." onclick="displaynum(dot.value)">
-            <input type="button" class="num maincolor" name="btn0" value="0" onclick="displaynum(btn0.value)">
-            <input type="button" class="num pur" name="eqlbtn" value="=" onclick="displaynum(eqlbtn.value)">
-            <input type="button" class="num ora" name="divbtn" value="/" onclick="displaynum(divbtn.value)"><br>
+            <script>
+                var n1 = document.querySelector('#n1')
+                var n2 = document.querySelector('#n2')
+                var resultado = document.querySelector('span')
+
+                function somar() {
+                    resultado.innerHTML = parseInt(n1.value) + parseInt(n2.value)
+                }
+                function sub() {
+                    resultado.innerHTML = parseInt(n1.value) - parseInt(n2.value)
+                }
+                function mult() {
+                    resultado.innerHTML = parseInt(n1.value) * parseInt(n2.value)
+                }
+                function div() {
+                    resultado.innerHTML = parseInt(n1.value) / parseInt(n2.value)
+                }
+
+                console.log(resuldado)
+
+            </script>
         </form>
     </div>
 </body>
-
-<script src="script.js"> </script>
 
 </html>
