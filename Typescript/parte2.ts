@@ -61,21 +61,74 @@ const recordItemList: RecordItem[] = [
 ];
 
 const buildBarSeries = (games: Game[], records: RecordItem[]) => {
-    const mappedGames = games.map(game => {
-
-        const filteredGames = records.filter(record => {
-            return record.gameTitle === game.title && record.gamePlatform === game.platform;
-        });
-
-        return {
-            x: `${game.title} | ${game.platform}`,
-            y: filteredGames.length
-        }
+  const mappedGames = games.map((game) => {
+    const filteredGames = records.filter((record) => {
+      return (
+        record.gameTitle === game.title && record.gamePlatform === game.platform
+      );
     });
 
-    const sortedGames = mappedGames.sort((a, b) => b.y - a.y);
+    return {
+      x: `${game.title} | ${game.platform}`,
+      y: filteredGames.length,
+    };
+  });
 
-    return sortedGames.slice(0, 8);
-}
+  const sortedGames = mappedGames.sort((a, b) => b.y - a.y);
 
+  return sortedGames.slice(0, 8);
+};
+
+const getPlatformChartData = (record: RecordItem[]) => {
+  const platforms = ["PC", "PLAYSTATION", "XBOX"];
+
+  const series = platforms.map((platform) => {
+    const filteredGames = record.filter((record) => {
+      return record.gamePlatform === platform;
+    });
+
+    return filteredGames.length;
+  });
+
+  return {
+    labels: platforms,
+    series,
+  };
+};
+
+const getGenreChatData = (records: RecordItem[]) => {
+  const computeRecordItem = (obj, record) => {
+    if (obj[record.genreName] !== undefined) {
+      obj[record.genreName] += 1;
+    } else {
+      obj[record.genreName] = 1;
+    }
+
+    return obj;
+  };
+
+  const genreByAmount = records.reduce(computeRecordItem, {});
+
+  const labels = Object.keys(genreByAmount);
+  const series = labels.map((x) => genreByAmount[x]);
+
+  return {
+    labels,
+    series,
+  };
+};
+
+console.log(
+  "GRÁFICO DE BARRAS: ---------------------------------------------------"
+);
 console.log(buildBarSeries(gameList, recordItemList));
+
+console.log(
+  "GRÁFICO DE ROSCA (PLATAFORMAS): --------------------------------------"
+);
+console.log(getPlatformChartData(recordItemList));
+
+console.log(
+  "GRÁFICO DE ROSCA (GÊNEROS): ------------------------------------------"
+);
+console.log(getGenreChatData(recordItemList));
