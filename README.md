@@ -1,2 +1,2 @@
-# Js-execises
+# JavaScript Execises
 my own JavaScript exercises
