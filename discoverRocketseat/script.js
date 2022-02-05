@@ -73,3 +73,12 @@ console.log(sid.walk());
 let date = new Date("2021-06-16");
 
 console.log(date);
+
+console.log('------------------------nova função------------------------');
+
+function Multiplicar(x, y) {
+  return x * y;
+}
+
+const resultado = Multiplicar(10, 2); // Resultado recebe a soma de 10 + 2
+console.log(`O resultado = ${resultado}`);
