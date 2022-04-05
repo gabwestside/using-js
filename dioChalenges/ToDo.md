@@ -2,7 +2,7 @@ ToDO list Impulso Fullstack Web Developer:
 
 [X] Recreating Netflix Interfaces
 [-] Build web pages with Bootstrap
-[O] Colections
+[X] Colections
 
     # Map vs Object
 
