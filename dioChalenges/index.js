@@ -3,18 +3,19 @@ const myMap = new Map();
 myMap.set('apple', 'fruit');
 // Map(1) {"apple" => "fruit"}
 
-myMap.get(apple);
+myMap.get('apple');
 // "fruit"
 
 myMap.delete('apple');
 // true
 
-myMap.get(apple);
+myMap.get('apple');
 // undefined
 
 const mySet = new Set();
 
 mySet.add(1);
+
 mySet.add(2);
 
 mySet.has(1);
@@ -25,3 +26,44 @@ mySet.has(3);
 
 mySet.delete(5);
 
+function getAdmins(map) {
+    let admins = [];
+
+    for([key, value] of map) {
+        if(value === 'Admin') {
+            admins.push(key);
+        }
+    }
+
+    return admins;
+}
+
+function getUsers(map) {
+    let users = [];
+
+    for([key, value] of map) {
+        if(value === 'User') {
+            users.push(key);
+        }
+    }
+
+    return users;
+}
+
+const usuarios = new Map();
+
+usuarios.set('Gabriel', 'Admin');
+
+usuarios.set('Ana', 'User');
+
+usuarios.set('Victoria', 'Admin');
+
+usuarios.set('Luiz', 'User');
+
+usuarios.set('José', 'User');
+
+usuarios.set('Pedro', 'user');
+
+console.log(getAdmins(usuarios));
+
+console.log(getUsers(usuarios));
