@@ -80,3 +80,26 @@ function valoresUnicos(arr) {
 }
 
 console.log(valoresUnicos(meuArray));
+
+// return and throw
+
+// using return
+function palindromeVerify(string) {
+    if (!string) return "Invalid string";
+
+    return string === string.split('').reverse().join('');
+}
+
+palindromeVerify('cat');
+
+console.log(palindromeVerify);
+
+function palindromeIsOk(string) {
+    if (!string) return "Invalid string";
+
+    return string === string.split('').reverse().join('');
+}
+
+palindromeIsOk('cat');
+
+console.log(palindromeIsOk);
