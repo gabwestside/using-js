@@ -26,30 +26,28 @@ mySet.has(3);
 
 mySet.delete(5);
 
-
-
 function getAdmins(map) {
-    let admins = [];
+  let admins = [];
 
-    for([key, value] of map) {
-        if(value === 'Admin') {
-            admins.push(key);
-        }
+  for ([key, value] of map) {
+    if (value === 'Admin') {
+      admins.push(key);
     }
+  }
 
-    return admins;
+  return admins;
 }
 
 function getUsers(map) {
-    let users = [];
+  let users = [];
 
-    for([key, value] of map) {
-        if(value === 'User') {
-            users.push(key);
-        }
+  for ([key, value] of map) {
+    if (value === 'User') {
+      users.push(key);
     }
+  }
 
-    return users;
+  return users;
 }
 
 const usuarios = new Map();
@@ -70,13 +68,12 @@ console.log(getAdmins(usuarios));
 
 console.log(getUsers(usuarios));
 
-
 const meuArray = [30, 30, 40, 5, 223, 2049, 3034, 5];
 
 function valoresUnicos(arr) {
-    const mySet = new Set(arr);
+  const mySet = new Set(arr);
 
-    return [...mySet];
+  return [...mySet];
 }
 
 console.log(valoresUnicos(meuArray));
@@ -85,9 +82,9 @@ console.log(valoresUnicos(meuArray));
 
 // using return
 function palindromeVerify(string) {
-    if (!string) return "Invalid string";
+  if (!string) return 'Invalid string';
 
-    return string === string.split('').reverse().join('');
+  return string === string.split('').reverse().join('');
 }
 
 palindromeVerify('cat');
@@ -95,11 +92,15 @@ palindromeVerify('cat');
 console.log(palindromeVerify);
 
 function palindromeIsOk(string) {
-    if (!string) return "Invalid string";
+  if (!string) throw 'Invalid string';
 
-    return string === string.split('').reverse().join('');
+  return string === string.split('').reverse().join('');
 }
 
-palindromeIsOk('cat');
-
-console.log(palindromeIsOk);
+function tryCatchExample(string) {
+  try {
+    palindromeIsOk(string);
+  } catch (e) {
+    console.log(e);
+  }
+}
