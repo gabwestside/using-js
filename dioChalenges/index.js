@@ -97,10 +97,15 @@ function palindromeIsOk(string) {
   return string === string.split('').reverse().join('');
 }
 
+// palindromeIsOk('');
+
 function tryCatchExample(string) {
   try {
     palindromeIsOk(string);
   } catch (e) {
-    console.log(e);
+    throw e;
+  }
+  finally {
+    console.log('A string enviada foi: ' + string);
   }
 }
