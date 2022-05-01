@@ -82,3 +82,13 @@ function Multiplicar(x, y) {
 
 const resultado = Multiplicar(10, 2); // Resultado recebe a soma de 10 + 2
 console.log(`O resultado = ${resultado}`);
+
+// toLowerCase and toUpperCase
+
+let word = "Progamar é muito bom!"
+
+console.log(
+  word
+    .toUpperCase()
+    .toUpperCase()
+  );
