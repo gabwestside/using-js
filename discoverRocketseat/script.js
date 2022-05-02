@@ -152,3 +152,5 @@ let index = techs.indexOf('css')
 techs.splice(index, 1)
 
 console.log(techs)
+
+console.log('------------------------nova função------------------------');
