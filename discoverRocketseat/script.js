@@ -83,6 +83,8 @@ function Multiplicar(x, y) {
 const resultado = Multiplicar(10, 2); // Resultado recebe a soma de 10 + 2
 console.log(`O resultado = ${resultado}`);
 
+// Manipulando Strings
+
 // toLowerCase and toUpperCase
 
 let word = "Progamar é muito bom!"
@@ -92,3 +94,61 @@ console.log(
     .toUpperCase()
     .toUpperCase()
   );
+
+// Manipulando Strings e Arrays
+
+let phrase = "Eu quero viver o Amor!"
+let myArr = phrase.split(" ")
+let phraseWithUnderscore = myArr.join("_")
+console.log(phraseWithUnderscore.toUpperCase())
+
+// Verificar se o texto contém a palavra Amor
+
+let phraseAboutLove = "I want to live the love!"
+console.log(phraseAboutLove.includes("love"))
+
+// Criar Array com construtor
+
+let myArray = new Array('a', 'b', 'c')
+console.log(myArray)
+
+// Contar elementos de um array
+console.log([
+  "a",
+  {type: "array"},
+  function() { return "alo" }
+].length);
+
+// Transformar uma cadeia de caracteres em elementos de um
+// array
+
+let wordStudy = "manipulação"
+console.log(Array.from(word))
+
+// Manipulando Arrays
+
+let techs = ['html', 'css', 'js']
+
+// adicionar um item no fim
+techs.push('node.js')
+
+// adicionar no começo
+techs.unshift('sql')
+
+// remover do fim
+techs.pop()
+
+// remover do fim
+techs.shift()
+
+// pegar somente alguns elementos do array
+console.log(techs.slice(1,2))
+
+// remover 1 ou mais items em qualquer posição do array
+techs.splice(1, 0)
+
+// encontrar a posição de um elemento no array
+let index = techs.indexOf('css')
+techs.splice(index, 1)
+
+console.log(techs)
