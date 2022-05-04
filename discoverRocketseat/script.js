@@ -261,3 +261,147 @@ console.log(canDrive);
   -assignment                        == += -= *=
 
 */
+
+console.log('------------------------new function------------------------');
+
+// if...else
+
+let temperature = 36,
+  highTemperature = temperature >= 37.5,
+  mediumTemperature = temperature < 37.5 && temperature >= 37
+
+if (highTemperature)
+  console.log('High fever')
+
+else if (mediumTemperature) 
+  console.log('Moderated fever')
+
+else 
+  console.log('Healthy')
+
+// switch
+function calculate(number1, operator, number2) {
+  let result = 0
+
+  switch (operator) {
+    case '+':
+      result = number1 + number2
+      break
+  
+    case '-':
+      result = number1 - number2
+      break
+
+    case '*':
+      result = number1 * number2
+      break
+
+    case '/':
+      result = number1 / number2
+      break
+  
+    default:
+      console.log('not implemented')
+      break
+  }
+}
+
+console.log(calculate(4, '-', 2));
+
+// throw
+function sayMyName(name = '') {
+  if (name === '') {
+    //throw new Error("Name's required")
+  }
+  console.log(name)
+}
+
+// try catch
+try {
+  sayMyName('Gabriel')
+} catch (e) {
+  console.log(e)
+}
+
+// Loop -> for
+for (let i = 0; i < 5; i++) {
+  if (i === 0)
+    continue
+  
+  if (i === 4)
+    break
+
+  console.log(i)
+}
+
+// Loop -> while
+let i = 1000
+while (i >= 10) {
+  console.log(i)
+
+  i /= 10
+}
+
+// Loop -> for...of
+let names = ['Gab', 'West', 'Side']
+for (let name of names) {
+  console.log(name)
+}
+
+// Loop -> for...in
+let personOne = {
+  name: 'Gab',
+  age: 24,
+  height: `6'0`,
+  weight: 182.98
+}
+
+console.log()
+
+for (let property in personOne) {
+  console.log(property)
+  console.log(personOne[property])
+}
+
+console.log();
+console.log('<----Exercises---->');
+console.log();
+
+// Exercises
+function getScore(score) {
+  let finalScore,
+    scoreA = score >= 90 && score <= 100,
+    scoreB = score >= 80 && score < 90,
+    scoreC = score >= 70 && score < 80,
+    scoreD = score >= 60 && score < 70,
+    scoreF = score < 60 && score > 0
+
+  switch (score) {
+    case scoreA:
+      finalScore = 'A'
+      break
+    
+    case scoreB:
+      finalScore = 'B'   
+      break
+
+    case scoreC:
+      finalScore = 'C'
+      break
+
+    case scoreD:
+      finalScore = 'D'
+      break  
+
+    case scoreF:
+      finalScore = 'F'
+      break 
+      
+    default:
+      console.log('Invalid score')
+      break
+  }
+  return finalScore
+}
+
+console.log(getScore(90)) 
