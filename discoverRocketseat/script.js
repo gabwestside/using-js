@@ -154,3 +154,110 @@ techs.splice(index, 1)
 console.log(techs)
 
 console.log('------------------------nova função------------------------');
+
+// Expressões e Operadores
+
+// Operators Ternary
+
+let number = 1
+
+console.log(number ? 'Hi' : 'Bye');
+
+// Espression new
+
+let nameGab = new String('Gab')
+nameGab.surName = 'Westside'
+
+let age = new Number(23)
+console.log(nameGab.surName, age)
+
+// Unary operators => typeof and delete
+
+const person = {
+  nameTo: 'Gabriel',
+  age: 25,
+}
+
+console.log(typeof 'gab'); // serve para saber o tipo
+
+delete person.age
+
+console.log(person);
+
+// Arithmetics Operators
+
+console.log(3.2 * 5.5); // multiplication
+
+console.log(12 / 2); // division
+
+console.log(33 + 67); // addition
+
+console.log(34 - 24); // subtraction
+
+let remainder = 11 % 10
+console.log(remainder); // division remainder
+
+let increment = 0
+increment++ 
+console.log(increment); // increment ++
+
+let decrement = 0
+decrement--
+console.log(decrement); // decrement --
+
+console.log(2 ** 3); // exponential **
+
+// Grouping operator ( )
+
+let total = (2 + 3) * 5
+console.log(total);
+
+// Estritamente igual === diferente !==
+
+let one = 1
+let two = 2
+
+console.log(one === "1");
+
+console.log(one === 1);
+
+console.log(two !== "2");
+
+console.log(two !== 2);
+
+// Condição então valor 1 se não valor 2
+// condition ? value1 : value2
+
+// Examples: Nice breakfast
+let bread = true
+let cheese = true
+
+const niceBreakfast = bread && cheese 
+  ? 'Awesome breakfast' 
+  : 'Bad breakfast'
+
+console.log(niceBreakfast);
+
+// High then 180 
+let ageTo = 16
+
+const canDrive = ageTo >= 18
+  ? 'Can drive'
+  : `Can't drive`
+
+console.log(canDrive);
+
+/* 
+  ## Operator precedence
+
+  -grouping                          ( )      
+  -negation and increment            ! ++ --
+  -multiplication and division       * /
+  -relational                        < <= > >=
+  -equality                          == != === !==
+  -AND                               &&
+  -OR                                ||
+  -conditional                       ?:
+  -assignment                        == += -= *=
+
+*/
