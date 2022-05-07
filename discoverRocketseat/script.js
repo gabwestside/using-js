@@ -364,7 +364,7 @@ for (let property in personOne) {
 }
 
 console.log();
-console.log('<----Exercises---->');
+console.log('<----Exercise1---->');
 console.log();
 
 // Exercises
@@ -405,3 +405,54 @@ function getScore(score) {
 }
 
 console.log(getScore(90)) 
+
+console.log()
+console.log('<----Exercise2---->');
+console.log()
+
+let finances = {
+  incomes: [
+    1400,
+    2000,
+    3500,
+    2200
+  ],
+  outcomes: [
+    850,
+    1600,
+    2120,
+    1150
+  ]
+}
+
+function sum(arr) {
+  let total = 0
+
+  for (var value of arr) {
+    total += value
+  }
+
+  return total
+}
+
+function totalCosts() {
+  const totalIncomes = sum(finances.incomes)
+  const totalOutcomes = sum(finances.outcomes)
+
+  const total = totalIncomes - totalOutcomes
+
+  const itsOk = total >= 0
+
+  let financesMessage = 'negative'
+
+  if (itsOk) financesMessage = 'positive'
+
+  console.log(`Your current balance is ${financesMessage}, with $${total.toFixed(2)}`)
+
+}
+
+totalCosts()
+
+console.log()
+console.log('<----Exercise3---->');
+console.log()
