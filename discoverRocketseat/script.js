@@ -364,7 +364,7 @@ for (let property in personOne) {
 }
 
 console.log();
-console.log('<----Exercise1---->');
+console.log('<----Exercise1---->'); // Sistema de notas escolares
 console.log();
 
 // Exercises
@@ -407,7 +407,7 @@ function getScore(score) {
 console.log(getScore(90)) 
 
 console.log()
-console.log('<----Exercise2---->');
+console.log('<----Exercise2---->'); // Fluxo de caixa de finanças
 console.log()
 
 let finances = {
@@ -448,11 +448,43 @@ function totalCosts() {
   if (itsOk) financesMessage = 'positive'
 
   console.log(`Your current balance is ${financesMessage}, with $${total.toFixed(2)}`)
-
 }
 
 totalCosts()
 
 console.log()
-console.log('<----Exercise3---->');
+console.log('<----Exercise3---->'); // Celcius to fahrenheit
+console.log()
+
+function transformDegree(degree) {
+  const celcius = degree.toUpperCase().includes('C')
+  const fahrenheit = degree.toUpperCase().includes('F')
+
+  if (!celcius && !fahrenheit) {
+    throw new Error('Unkown degree')
+  }  
+
+  let updateDegree = Number(degree.toUpperCase().replace('F', ''))
+  let formula = fahrenheit => (fahrenheit - 32) * (5/9)
+  let degreeSing = 'C'
+
+  if(celcius) {
+    updateDegree = Number(degree.toUpperCase().replace('C', ''))
+    formula = celcius => (celcius * (9/5)) + 32
+    degreeSing = 'F'
+  }
+
+  return formula(updateDegree).toFixed(1) + degreeSing
+}
+
+try {
+  console.log(transformDegree('100f'))
+  console.log(transformDegree('20C'))
+  transformDegree('70v')
+} catch (error) {
+  console.log(error.message);
+}
+
+console.log()
+console.log('<----Exercise4---->'); // 
 console.log()
