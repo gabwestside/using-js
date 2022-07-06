@@ -1,5 +1,5 @@
 function alertMensage() {
-  alert("Seu script está funcionando!");
+  alert("Works!");
 }
 
 // Funcão que é um liquidificador
@@ -597,3 +597,7 @@ function booksOfAuthor(author) {
 }
 
 booksOfAuthor('Stephen R. Covey')
+
+function printer() {
+  console.log('works!')
+}

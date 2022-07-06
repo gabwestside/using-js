@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: "Ubuntu", sans-serif;
-  font-size: 2.5rem;
+  font-size: 1rem;
 }
 
 body {
@@ -16,26 +16,30 @@ body {
   height: 200px;
   width: 200px;
   margin-top: 5%;
-  border: 1px solid black;
   border-radius: 5px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-button {
+.container h1 {
+  cursor: pointer;
+}
+
+.container button {
+  margin-top: 5px;
   min-width: 100px;
   height: 20px;
   border: 1px solid black;
   background: transparent;
   transition: 0.3s;
   cursor: pointer;
-  color: black;
+  color: #010101;
+  font-weight: bold;
   border-radius: 10px;
   font-size: 15px;
-  margin: auto;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.452);
-  /* padding: 10px; */
 }
 
 button:hover {
