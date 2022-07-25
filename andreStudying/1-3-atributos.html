@@ -1,0 +1,43 @@
+<!--
+  ATRIBUTOS HTML
+  - são informações extras
+  - ou configurações
+-->
+
+<img src="image.png" alt="text">
+<br>
+<!--neste caso,como não há imagem colocamos um texto para descrevê-la-->
+
+<!--
+  ATRIBUTOS BOLEANOS 
+  - Não precisam de conteúdo, por si so ja
+  - true or false
+-->
+
+<input type="text"> <!--TAG input sem atributo boleano--> 
+<br>
+<input type="text" disabled> <!--atributo boleano "disabled" desabilita a adição de texto pelo user-->
+<br>
+
+<!--
+  ASPAS
+  - omissão (pode causar erro)
+  - simples (cuidado)
+  - dupla (recomendado)
+
+  OBS: dentro das aspas duplas pode haver aspas simples
+          ex: title="isn't"
+-->
+<a href="https://google.com">link</a> <!--aspas duplas-->>
+<br>
+<a href=https://google.com target"">link</a> <!--omissão-->>
+
+<!--pode causar erro dependendo do navegador pois possui um TAG (target"")logo após-->
+
+<br>
+<a href="https://google.com" title="isn't">dupla</a>
+<br>
+<a href='https://google.com' title=''>simples</a>
+<br>
+<a href='https://google.com' title'isn't'>simples erro</a> 
+<!--dependendo do navegador o sist reconhece a aspa como fechamento do title='isn'-->
