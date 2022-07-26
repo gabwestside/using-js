@@ -601,3 +601,35 @@ booksOfAuthor('Stephen R. Covey')
 function printer() {
   console.log('works!')
 }
+
+setTimeout(function() {
+  console.log('after 2s')
+}, 2000)
+
+// const https = require('https')
+// const API = 'https://jsonplaceholder.typicode.com/users?_limit=2'
+
+// https.get(API, response => {
+//   console.log(response.statusCode)
+// })
+
+// console.log('connecting API...')
+
+let accepts = false
+
+console.log('calling uber')
+
+const promise = 
+  new Promise((relsove, reject) => {
+    if (accepts) {
+      return relsove('request accepts')
+    }else 
+      return reject('request denied')
+})
+
+console.log('waiting for...')
+
+promise
+  .then(response => console.log(response))
+  .catch(error => console.log(error))
+  .finally(() => console.log('done'))
