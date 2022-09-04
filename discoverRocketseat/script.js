@@ -633,3 +633,10 @@ promise
   .then(response => console.log(response))
   .catch(error => console.log(error))
   .finally(() => console.log('done'))
+
+fetch('https://api.github.com/users/gabwestside')
+  .then(response => response.json())
+  .then(data => fetch(data.respos_url))
+  .then(result => result.json())
+  .then( d => console.log(d))
+  .catch(error => console.log(error))
