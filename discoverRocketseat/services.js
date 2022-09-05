@@ -15,3 +15,34 @@ Promise.all([
     console.log( results[1].data.length)
   })
   .catch( err => console.log(err.message))
+
+  const promise = new Promise(function( resolve, reject) {
+    return resolve('ok!')
+  })
+
+  // promise way to caught a response with then
+  promise
+    .then(function(response) {
+      console.log(response)
+    })
+    .catch(function (error) {
+      console.log(error)
+    })
+    .finally(function() {
+      console.log('always will work')
+    })
+  
+  //async await promise form
+  async function start() {
+    try {
+      const result = await promise
+      console.log(result)
+    } catch (error) {
+      console.log(error)
+    } finally {
+      console.log('it always running...')
+    }
+  }
+  
+  start()
+  
