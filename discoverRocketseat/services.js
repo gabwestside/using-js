@@ -45,4 +45,29 @@ Promise.all([
   }
   
   start()
+
+  async function startApi() {
+    try {
+     const response = await fetch('https://api.github.com/users/gabwestside')
+     const user = await response.json()
+     const reposResponse = await fetch(user.repos_url)
+     const repos = await reposResponse.json()
+   
+     console.log(repos)
+    } catch (error) {
+      console.log(error)
+    }
+   }
+   
+   startApi()
+   
+   async function startClean() {
+     const url = 'https://api.github.com/users/gabwestside'
+     const user = await fetch(url).then(r => r.json())
+     const repos = await fetch(user.repos_url).then(r => r.json())
+   
+     console.log(repos)
+   }
+   
+    startClean().catch(e => console.log(e))
   
