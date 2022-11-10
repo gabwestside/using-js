@@ -640,3 +640,25 @@ fetch('https://api.github.com/users/gabwestside')
   .then(result => result.json())
   .then( d => console.log(d))
   .catch(error => console.log(error))
+
+// Clean code example:
+const createUser = async (email) => {
+  const user = await User.create({ email })
+  await user.save()
+}
+  
+const createNotification = async (email) => {
+  const notification = await Notification.create({ email })
+  await notification.save()
+}
+    
+const login = async () => {
+  const date = new Date()
+  Log.add(date, 'signed up', email)
+}
+
+async function signupUser(email) {
+  await createUser(email)
+  await createNotification(email)
+  login(email)
+}
